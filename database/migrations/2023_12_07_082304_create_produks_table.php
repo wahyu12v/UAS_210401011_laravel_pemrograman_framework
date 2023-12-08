@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('judul');
             $table->string('merek');
             $table->string('kategori');
-            // $table->string('jurusan');
+            $table->string('harga');
+            $table->string('stok');
             $table->text('description');
             $table->text('img');
             $table->timestamps();

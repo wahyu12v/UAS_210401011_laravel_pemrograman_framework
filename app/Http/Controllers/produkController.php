@@ -49,7 +49,8 @@ class produkController extends Controller
             'judul' => $request->judul,
              'merek' =>  $request->merek,
             'kategori' =>  $request->kategori,
-            // 'jurusan' => $request->jurusan,
+            'harga' => $request->harga,
+            'stok'=> $request->stok,
             'description' =>  $request->description,
             'img'=>$foto,
         ];

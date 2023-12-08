@@ -17,7 +17,8 @@
                     <th style="width: 5%">Nomor</th>
                     <th>Judul produk</th>
                     <th>Merek</th>
-                    <th>kategori</th>
+                    <th>Harga</th>
+                    <th>Stok Produk</th>
                     <th>Waktu Posting</th>
                     <th>Action</th>
                 </tr>
@@ -29,7 +30,8 @@
                         <td class="align-middle" style="text-align: center;">{{ $loop->iteration }}</td>
                         <td class="align-middle" style="text-align: center;">{{ $produk->judul }}</td>
                         <td class="align-middle" style="text-align: center;">{{ $produk->merek}}</td>
-                        <td class="align-middle" style="text-align: center;">{{ $produk->kategori}}</td>
+                        <td class="align-middle" style="text-align: center;">{{ $produk->harga}}</td>
+                        <td class="align-middle" style="text-align: center;">{{ $produk->stok}}</td>
                         <td class="align-middle" style="text-align: center;">{{ $produk->updated_at->format('F d, Y') }}</td>
                         <td class="d-flex justify-content-center">
                             <a href="{{ route('produk.show', $produk->id) }}" type="button" class="btn btn-success mx-1">Detail</a>
@@ -44,7 +46,7 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="5" style="text-align: center;">Data Tidak Ada</td>
+                        <td colspan="7" style="text-align: center;">Data Tidak Ada</td>
                     </tr>
                 @endif
             </tbody>

@@ -29,6 +29,14 @@
                             <div>{{ $produk->kategori }}</div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Harga
+                            <div>{{ $produk->harga }}</div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Stok Produk
+                            <div>{{ $produk->stok }}</div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
                             Tanggal diposting
                             <div>{{ $produk->updated_at->format('F d, Y') }}</div>
                         </li>

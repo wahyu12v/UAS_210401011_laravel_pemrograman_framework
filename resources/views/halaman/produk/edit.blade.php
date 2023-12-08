@@ -22,6 +22,36 @@
             <label for="merek" class="form-label">Merek</label>
             <input type="text" class="form-control" id="merek" name="namamerek" value="{{ $produk->merek }}" disabled>
         </div>
+        <div class="mb-3">
+            <label for="harga" class="form-label">Harga produk</label>
+            <div class="input-group"> <!-- Tambahkan div untuk menggunakan Bootstrap input group -->
+                <span class="input-group-text" id="rupiah-addon">Rp.</span> <!-- Tambahkan span dengan Rp. -->
+                <input type="text" class="form-control" id="harga" name="harga">
+            </div>
+        </div>
+
+        <script>
+            const inputHarga = document.getElementById('harga');
+
+            inputHarga.addEventListener('input', function (e) {
+                // Hilangkan karakter selain angka
+                let nominal = this.value.replace(/\D/g, '');
+
+                // Format ke dalam rupiah
+                nominal = new Intl.NumberFormat('id-ID').format(nominal);
+
+                // Tambahkan "Rp." secara manual sebelum nominal
+                nominal = 'Rp. ' + nominal;
+
+                // Tampilkan kembali ke dalam input
+                this.value = nominal;
+            });
+        </script>
+
+         <div class="mb-3">
+            <label for="stok" class="form-label">Stok produk</label>
+            <input type="text" class="form-control" id="stok" name="stok">
+        </div>
         <label for="gambar" class="mb-2 d-block">Pilih Gambar</label>
         <div class="input-group mb-3">
             <input type="file" class="form-control" id="img" name="img" onchange="previewImage(event)">
