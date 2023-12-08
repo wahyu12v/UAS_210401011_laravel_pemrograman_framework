@@ -22,5 +22,5 @@
 
 
 <footer class="footer" style="margin-bottom: -10px;">
-    <p>Ardian Wahyu Saputra - 210401011</p>
+    <p>&copy; Ardian Wahyu Saputra - 210401011</p>
 </footer>
