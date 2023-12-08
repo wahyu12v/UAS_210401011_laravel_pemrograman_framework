@@ -1,0 +1,8 @@
+.btn-hover-info:hover {
+    background-color: #DDF2FD; /* Ganti dengan warna yang diinginkan */
+    /* Atau tambahkan efek hover lainnya sesuai kebutuhan */
+    /* Misalnya: */
+    /* opacity: 0.8; */
+    /* atau */
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+  }
