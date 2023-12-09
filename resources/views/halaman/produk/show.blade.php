@@ -1,9 +1,14 @@
 @extends('layouts.app')
 @section('body')
-    <div class="d-flex align-items-center justify-content-between mb-4">
-        <h3 class="mb-0">Detail Produk</h3>
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <h3 class="mb-0">Detail Produk</h3>
+    <div class="d-flex">
+        <a class="btn btn-info btn-hover-info me-2" href="{{ route('welcome') }}" role="button">Home</a>
         <a class="btn btn-info btn-hover-info" href="{{ route('produk.index') }}" role="button">Kembali</a>
     </div>
+</div>
+
+
     <div class="row">
         <div class="col-lg-6">
             <div class="card mb-4">
