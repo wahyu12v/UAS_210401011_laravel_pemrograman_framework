@@ -10,14 +10,16 @@
 
 <form action="{{ route('kategori.store') }}" method="POST">
     @csrf
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="namakategori" placeholder="Nama Kategori">
-        <label for="floatingInput">Nama Kategori</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="jenis"  placeholder="jenis kategori">
-        <label for="floatingInput">Jenis Kategori</label>
-      </div>
+
+    <div class="mb-3">
+        <label for="namaKategori" class="form-label">Nama Kategori</label>
+        <input type="text" class="form-control" id="namaKategori" name="namakategori">
+    </div>
+
+    <div class="mb-3">
+        <label for="jenisKategori" class="form-label">Jenis Kategori</label>
+        <input type="text" class="form-control" id="jenisKategori" name="jenis">
+    </div>
 
       <button class="btn btn-info btn-hover-info">Submit</button>
 

@@ -18,8 +18,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.welcome');
+    $produks = App\Models\Produk::all();
+    $merek = App\Models\produk::orderBy('created_at','DESC')->get();
+    // Kirim kedua variabel ke tampilan 'halaman.produk.index'
+    return view('pages.welcome', compact('produks', 'merek'));
 })->name('welcome');
+
+
 
 
 
@@ -30,6 +35,6 @@ Route::resource('/kategori',KategoriController::class);
 Route::resource('/merek',merekController::class);
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

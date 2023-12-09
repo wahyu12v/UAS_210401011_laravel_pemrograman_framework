@@ -16,7 +16,7 @@
             <select class="form-select" id="kategori" aria-label="Default select example" name="kategori">
                 <option selected disabled>Pilih Kategori</option>
                 @foreach($kategori as $k)
-                    <option value="{{$k->namakategori}}">{{$k->namakategori}}</option>
+                    <option value="{{$k->id}}">{{$k->namakategori}}</option>
                 @endforeach
             </select>
         </div>
@@ -25,14 +25,14 @@
             <select class="form-select" id="merek" aria-label="Default select example" name="merek">
                 <option selected disabled>Pilih merek</option>
                 @foreach($datamerek as $a)
-                    <option value="{{ $a->namamerek }}">{{ $a->namamerek }}</option>
+                    <option value="{{ $a->id }}">{{ $a->namamerek }}</option>
                 @endforeach
             </select>
         </div>
         <div class="mb-3">
             <label for="harga" class="form-label">Harga produk</label>
-            <div class="input-group"> <!-- Tambahkan div untuk menggunakan Bootstrap input group -->
-                <span class="input-group-text" id="rupiah-addon">Rp.</span> <!-- Tambahkan span dengan Rp. -->
+            <div class="input-group">
+                <span class="input-group-text" id="rupiah-addon">Rp.</span>
                 <input type="text" class="form-control" id="harga" name="harga">
             </div>
         </div>
@@ -69,8 +69,23 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Deskripsi</label>
-            <textarea class="form-control" id="description" name="description" style="height: 300px"></textarea>
+            <textarea class="form-control" id="description" name="description" style="height: 300px" onkeyup="checkDescriptionLength()"></textarea>
+            <p id="charCountMessage"></p>
         </div>
+
+        <script>
+            function checkDescriptionLength() {
+                var description = document.getElementById("description").value;
+                var charCountMessage = document.getElementById("charCountMessage");
+
+                if (description.length < 200) {
+                    charCountMessage.textContent = "Minimal 200 karakter diperlukan.";
+                } else {
+                    charCountMessage.textContent = "";
+                }
+            }
+        </script>
+
         <button type="submit" class="btn btn-info btn-hover-info">Submit</button>
     </form>
 

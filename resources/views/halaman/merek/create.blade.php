@@ -8,23 +8,27 @@
 <hr />
 <form action="{{ route('merek.store') }}" method="POST">
     @csrf
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="namamerek" placeholder="Nama Merek">
-        <label for="floatingInput">Nama Merek</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="nohp" placeholder="Nomor Hp">
-        <label for="floatingInput">Nomor Hp</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="pemilik" placeholder="Pemilik Merek">
-        <label for="floatingInput">Pemilik Merek</label>
-      </div>
-      <div class="form-floating mb-3">
-        <textarea class="form-control" placeholder="Alamat" name="alamat" style="height: 200px"></textarea>
-        <label for="floatingInput">Alamat</label>
-      </div>
-      <button class="btn btn-info btn-hover-info">Submit</button>
+    <div class="mb-3">
+        <label for="namaMerek" class="form-label">Nama Merek</label>
+        <input type="text" class="form-control" id="namaMerek" name="namamerek">
+    </div>
+
+    <div class="mb-3">
+        <label for="nomorHp" class="form-label">Nomor Hp</label>
+        <input type="text" class="form-control" id="nomorHp" name="nohp">
+    </div>
+
+    <div class="mb-3">
+        <label for="pemilikMerek" class="form-label">Pemilik Merek</label>
+        <input type="text" class="form-control" id="pemilikMerek" name="pemilik">
+    </div>
+
+    <div class="mb-3">
+        <label for="alamat" class="form-label">Alamat</label>
+        <textarea class="form-control" id="alamat" name="alamat" style="height: 200px"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-info">Submit</button>
 </form>
 
 @endsection

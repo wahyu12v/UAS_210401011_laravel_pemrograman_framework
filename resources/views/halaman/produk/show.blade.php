@@ -22,11 +22,11 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Merek
-                            <div>{{ $produk->merek }}</div>
+                            <div>{{ $produk->merek->namamerek }}</div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Kategori
-                            <div>{{ $produk->kategori }}</div>
+                            <div>{{ $produk->kategori->namakategori }}</div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             Harga

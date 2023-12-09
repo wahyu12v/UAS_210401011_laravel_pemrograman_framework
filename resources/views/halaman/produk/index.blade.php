@@ -29,7 +29,7 @@
                     <tr class="text-center">
                         <td class="align-middle" style="text-align: center;">{{ $loop->iteration }}</td>
                         <td class="align-middle" style="text-align: center;">{{ $produk->judul }}</td>
-                        <td class="align-middle" style="text-align: center;">{{ $produk->merek}}</td>
+                        <td class="align-middle" style="text-align: center;">{{ $produk->kategori->namakategori }}</td>
                         <td class="align-middle" style="text-align: center;">{{ $produk->harga}}</td>
                         <td class="align-middle" style="text-align: center;">{{ $produk->stok}}</td>
                         <td class="align-middle" style="text-align: center;">{{ $produk->updated_at->format('F d, Y') }}</td>

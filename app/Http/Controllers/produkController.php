@@ -6,6 +6,7 @@ use App\Models\produk;
 use App\Models\merek;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class produkController extends Controller
 {
@@ -15,7 +16,8 @@ class produkController extends Controller
     public function index()
     {
         $produks = Produk::all();
-        $merek = produk::orderBy('created_at','DESC')->get();
+        $merek = produk::orderBy('created_at', 'DESC')->get();
+
 
         // Kirim kedua variabel ke tampilan 'halaman.produk.index'
         return view('halaman.produk.index', compact('produks', 'merek'));
@@ -25,6 +27,8 @@ class produkController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
+
     public function create()
     {
         $ketegori = new Kategori();
@@ -34,26 +38,26 @@ class produkController extends Controller
         $datamerek = $Resultmerek->getmerek();
 
         return view('halaman.produk.create')
-        ->with('kategori', $data)
-        ->with('datamerek', $datamerek);
-
+            ->with('kategori', $data)
+            ->with('datamerek', $datamerek);
     }
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $foto = round(microtime(true) * 1000).'-'.str_replace(' ', '-', $request->file('gambar')->getClientOriginalName());
+        $foto = round(microtime(true) * 1000) . '-' . str_replace(' ', '-', $request->file('gambar')->getClientOriginalName());
 
         $data = [
             'judul' => $request->judul,
-             'merek' =>  $request->merek,
-            'kategori' =>  $request->kategori,
+            'id_merek' =>  $request->merek,
+            'id_kategori' =>  $request->kategori,
             'harga' => $request->harga,
-            'stok'=> $request->stok,
+            'stok' => $request->stok,
             'description' =>  $request->description,
-            'img'=>$foto,
+            'img' => $foto,
         ];
+
 
         // simpan foto
         $request->file('gambar')->move(public_path('images'), $foto);
@@ -71,7 +75,7 @@ class produkController extends Controller
         $ketegori = new Kategori();
         $data = $ketegori->getKategori();
 
-        return view('halaman.produk.show',compact('produk'))->with('kategori', $data, );
+        return view('halaman.produk.show', compact('produk'))->with('kategori', $data,);
     }
 
     /**
@@ -95,7 +99,7 @@ class produkController extends Controller
     {
         $produk = produk::findOrFail($id);
         $produk->update($request->all());
-        return redirect()->route('produk.index')->with('success','Produk berhasil di update');
+        return redirect()->route('produk.index')->with('success', 'Produk berhasil di update');
     }
 
     /**
@@ -103,9 +107,30 @@ class produkController extends Controller
      */
     public function destroy(string $id)
     {
+
+        // panggil img di table produk
+        $produk = produk::find($id);
+
+        $img = $produk->img;
+
+
+
+        $filePath = public_path( '/images/' . $img);
+
+        if (file_exists($filePath)) {
+            unlink($filePath);
+            // Berkas berhasil dihapus
+        } else {
+            // Berkas tidak ditemukan
+        }
+
+
+
+
+        // hapus foto berdasarkan nama img
+
         $produk = produk::findOrFail($id);
         $produk->delete();
         return redirect()->route('produk.index')->with('success', 'prodduk Behasil di Hapus');
-
     }
 }

@@ -10,14 +10,18 @@
     <form action="{{ route('kategori.update', $kategori->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="namakategori" value="{{ $kategori->namakategori }}" placeholder="Nama kategori">
-            <label for="floatingInput">Nama kategori</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="jenis" value="{{ $kategori->jenis }}" placeholder="Jenis Kategori">
-            <label for="floatingInput">Jenis Kategori</label>
-          </div>
+
+
+          <div class="mb-3">
+            <label for="namaKategori" class="form-label">Nama Kategori</label>
+            <input type="text" class="form-control" name="namakategori" value="{{ $kategori->namakategori }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="jenisKategori" class="form-label">Jenis Kategori</label>
+            <input type="text" class="form-control" name="jenis" value="{{ $kategori->jenis }}">
+        </div>
+
           <button class="btn btn-dark">Update</button>
 
     </form>
