@@ -1,4 +1,4 @@
-<style>
+{{-- <style>
     /* Styling for the header */
 
     /* Adjusting content position to avoid overlap */
@@ -45,9 +45,29 @@
         color: white;
         margin: 0;
     }
-</style>
+</style> --}}
 
+{{--
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" style="color: white;" href="{{ route('welcome') }}">Home</a>
+            <a class="nav-link active" style="color: white;" href="{{ route('merek.index') }}">Merek</a>
+            <a class="nav-link active" style="color: white;" href="{{ route('kategori.index') }}">Kategori</a>
+            <a class="nav-link active" style="color: white;" href="{{ route('produk.index') }}">Produk</a>
+          </div>
+        </div>
+      </div>
+
+</nav> --}}
+
+{{--
 <div class="container-fluid">
 <div class="row">
     <!-- Sidebar -->
@@ -76,4 +96,29 @@
         </div>
     </nav>
 </div>
-</div>
+</div> --}}
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style=" background-color:#164863;">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" style="color: white;"  href="{{ route('welcome') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" style="color: white;" href="{{ route('merek.index') }}">Merek</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" style="color: white;" href="{{ route('kategori.index') }}">Kategori</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" style="color: white;" href="{{ route('produk.index') }}">Produk</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

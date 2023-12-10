@@ -6,7 +6,7 @@
         <a class="btn btn-info btn-hover-info" href="{{ route('produk.create') }}" role="button">Tambah produk</a>
     </div> <hr>
     @if (Session::has('success'))
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-info" role="alert">
                     {{ Session::get('success') }}
                 </div>
     @endif

@@ -1,11 +1,30 @@
 @extends('layouts.app')
 
 @section('body')
-<div class="">
+{{-- <div class="">
     <div class="d-flex align-items-center justify-content-between mb-2">
         <h3 class="mb-0">List Produk</h3>
     </div>
-    <hr>
+    <hr> --}}
+
+
+    <div class="mt-4" >
+        <div class="">
+            <div class=" bg-white">
+                <h3 class="mt-3">Selamat Datang</h3>
+                <p class="lead">Selamat datang di <b class="font-weight-bold text-info">ArdianTeknologi</b>, destinasi terbaik untuk pencinta teknologi dan gadget. Di sini, kami menyajikan informasi terkini seputar produk-produk gadget terbaru, ulasan mendalam, dan berita terbaru dari dunia teknologi. Dari smartphone hingga perangkat canggih lainnya, ArdianTeknologi menjadi sumber utama bagi para pecinta inovasi dan teknologi.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+            <h3 class="mb-0">List Produk</h3>
+        </div>
+        <hr>
+
 
 
     <!-- Tampilkan hasil pencarian -->
@@ -29,7 +48,11 @@
             </div>
         </div>
     @else
-        <p>Tidak ada hasil untuk pencarian ini.</p>
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        Tidak ada produk gadget yang Tersedia.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     @endif
 
     <!-- Daftar produk -->
