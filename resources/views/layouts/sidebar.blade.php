@@ -102,7 +102,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light" style=" background-color:#164863;">
-    <div class="container">
+    <div class="container ">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
