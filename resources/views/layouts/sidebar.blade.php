@@ -6,7 +6,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        padding-top: 20px;
+        padding-top: 17px;
         height: 100vh;
         z-index: 1;
         overflow-x: hidden;
@@ -106,16 +106,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white;"  href="{{ route('welcome') }}">Home</a>
+                    <a class="nav-link active" style="font-size:17px; color: white;"  href="{{ route('welcome') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white;" href="{{ route('merek.index') }}">Merek</a>
+                    <a class="nav-link active" style="font-size:17px; color: white;" href="{{ route('merek.index') }}">Merek</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white;" href="{{ route('kategori.index') }}">Kategori</a>
+                    <a class="nav-link active" style="font-size:17px; color: white;" href="{{ route('kategori.index') }}">Kategori</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" style="color: white;" href="{{ route('produk.index') }}">Produk</a>
+                    <a class="nav-link active" style="font-size:17px; color: white;" href="{{ route('produk.index') }}">Produk</a>
                 </li>
             </ul>
         </div>

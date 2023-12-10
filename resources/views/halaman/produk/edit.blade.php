@@ -95,6 +95,6 @@
             }
         </script>
 
-        <button type="submit" class="btn btn-dark">Update</button>
+        <button type="submit" class="btn btn-info">Update</button>
     </form>
 @endsection

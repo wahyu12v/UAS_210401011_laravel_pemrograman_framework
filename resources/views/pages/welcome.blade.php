@@ -28,32 +28,38 @@
 
 
     <!-- Tampilkan hasil pencarian -->
-    @if($produks->count() > 0)
-        <div class="mt-3">
-            <div class="row">
-                @foreach ($produks as $produk)
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="{{ asset('images/' . $produk->img) }}" class="card-img-top" alt="{{ $produk->judul }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $produk->judul }}</h5>
-                                <p class="card-text">{{ Str::limit($produk->description, 150) }}</p>
-                                <div class="d-flex justify-content-center">
-                                    <a href="{{ route('produk.show', $produk->id) }}" class="btn btn-info container mx-1">Detail</a>
-                                </div>
+<!-- Misalkan ini adalah bagian dari file blade atau view Anda -->
+
+@if($produks->count() > 0)
+    <div class="mt-3">
+        <div class="row">
+            @php
+                $reversedProduks = $produks->reverse();
+            @endphp
+
+            @foreach ($reversedProduks as $produk)
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('images/' . $produk->img) }}" class="card-img-top" alt="{{ $produk->judul }}" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $produk->judul }}</h5>
+                            <p class="card-text">{{ Str::limit($produk->description, 150) }}</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="{{ route('produk.show', $produk->id) }}" class="btn btn-info container mx-1">Detail</a>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
-    @else
+    </div>
+@else
     <div class="alert alert-info alert-dismissible fade show" role="alert">
         Tidak ada produk gadget yang Tersedia.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+@endif
 
-    @endif
 
     <!-- Daftar produk -->
 
