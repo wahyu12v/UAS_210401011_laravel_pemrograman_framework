@@ -19,46 +19,38 @@
 
 
 
-    <div class="">
-        <div class="d-flex align-items-center justify-content-between mb-2">
-            <h3 class="mb-0">List Produk</h3>
-        </div>
         <hr>
 
+        @if($produks->count() > 0)
+        <div class="mt-3">
+            <div class="row">
+                @php
+                    $reversedProduks = $produks->reverse();
+                @endphp
 
-
-    <!-- Tampilkan hasil pencarian -->
-<!-- Misalkan ini adalah bagian dari file blade atau view Anda -->
-
-@if($produks->count() > 0)
-    <div class="mt-3">
-        <div class="row">
-            @php
-                $reversedProduks = $produks->reverse();
-            @endphp
-
-            @foreach ($reversedProduks as $produk)
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="{{ asset('images/' . $produk->img) }}" class="card-img-top" alt="{{ $produk->judul }}" style="width: 100%; height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $produk->judul }}</h5>
-                            <p class="card-text">{{ Str::limit($produk->description, 150) }}</p>
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('produk.show', $produk->id) }}" class="btn btn-info container mx-1">Detail</a>
+                @foreach ($reversedProduks as $produk)
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <img src="{{ asset('images/' . $produk->img) }}" class="card-img-top" alt="{{ $produk->judul }}" style="width: 100%; height: 200px;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $produk->judul }}</h5>
+                                <p class="card-text">{{ Str::limit($produk->description, 150) }}</p>
+                                <div class="d-flex justify-content-center">
+                                    <a href="{{ route('produk.show', $produk->id) }}" class="btn btn-info container mx-1">Detail</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
-@else
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-        Tidak ada produk gadget yang Tersedia.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-@endif
+    @else
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            Tidak ada produk gadget yang Tersedia.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
 
 
     <!-- Daftar produk -->

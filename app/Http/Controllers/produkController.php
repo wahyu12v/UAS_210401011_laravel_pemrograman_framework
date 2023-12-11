@@ -110,11 +110,7 @@ class produkController extends Controller
 
         // panggil img di table produk
         $produk = produk::find($id);
-
         $img = $produk->img;
-
-
-
         $filePath = public_path( '/images/' . $img);
 
         if (file_exists($filePath)) {
@@ -123,9 +119,6 @@ class produkController extends Controller
         } else {
             // Berkas tidak ditemukan
         }
-
-
-
 
         // hapus foto berdasarkan nama img
 
