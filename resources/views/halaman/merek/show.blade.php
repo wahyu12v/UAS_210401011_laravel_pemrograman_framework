@@ -4,7 +4,6 @@
     <h3 class="mb-0">Detail merek</h3>
     <a class="btn btn-info btn-hover-info" href="{{ route('merek.index') }}" role="button">kembali</a>
 </div>
-
 <hr>
 <div class="form-floating mb-3">
     <input type="text" class="form-control" name="nama" value="{{ $merek->namamerek }}" placeholder="Nama merek" readonly>

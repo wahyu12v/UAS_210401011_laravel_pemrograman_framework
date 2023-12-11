@@ -7,8 +7,6 @@
         <a class="btn btn-info btn-hover-info" href="{{ route('produk.index') }}" role="button">Kembali</a>
     </div>
 </div>
-
-
     <div class="row">
         <div class="col-lg-6">
             <div class="card mb-4">
@@ -23,34 +21,20 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <h4 class="card-title mb-4">Spesifikasi</h4>
-
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Merek
-                            <div>{{ $produk->merek->namamerek }}</div>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Merek <div>{{ $produk->merek->namamerek }}</div>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Kategori
-                            <div>{{ $produk->kategori->namakategori }}</div>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Kategori<div>{{ $produk->kategori->namakategori }}</div>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Harga
-                            <div>{{ $produk->harga }}</div>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Harga<div>{{ $produk->harga }}</div>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Stok Produk
-                            <div>{{ $produk->stok }}</div>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Stok Produk<div>{{ $produk->stok }}</div>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Tanggal diposting
-                            <div>{{ $produk->updated_at->format('F d, Y') }}</div>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Tanggal diposting<div>{{ $produk->updated_at->format('F d, Y') }}</div>
                         </li>
                     </ul>
-
-
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-3">Deskripsi</h4>

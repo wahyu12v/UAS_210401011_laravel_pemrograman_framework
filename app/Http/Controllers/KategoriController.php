@@ -10,24 +10,15 @@ class KategoriController extends Controller
         $kategoris = Kategori::orderBy('created_at', 'DESC')->get();
         return view('halaman.kategori.index', compact('kategoris'));
     }
-
     public function create()
     {
         return view('halaman.kategori.create');
     }
-
     public function store(Request $request)
     {
         Kategori::create($request->all());
         return redirect()->route('kategori.index')->with('success', 'Kategori Behasil di Tambahkan');
     }
-
-    public function show(string $id)
-    {
-        // $kategori = Kategori::findOrFail($id);
-        // return view('halaman.kategori.show',compact('kategori'));
-    }
-
     public function edit(string $id)
     {
         $kategori = Kategori::findOrFail($id);
@@ -39,9 +30,7 @@ class KategoriController extends Controller
         $kategori = Kategori::findOrFail($id);
         $kategori->update($request->all());
         return redirect()->route('kategori.index')->with('success', 'Kategori Behasil di Update');
-
     }
-
     public function destroy(string $id)
     {
         $kategori = Kategori::findOrFail($id);

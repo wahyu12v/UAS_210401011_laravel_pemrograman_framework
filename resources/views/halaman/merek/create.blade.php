@@ -27,7 +27,6 @@
         <label for="alamat" class="form-label">Alamat</label>
         <textarea class="form-control" id="alamat" name="alamat" style="height: 200px"></textarea>
     </div>
-
     <button type="submit" class="btn btn-info">Submit</button>
 </form>
 

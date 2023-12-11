@@ -24,30 +24,20 @@
         </div>
         <div class="mb-3">
             <label for="harga" class="form-label">Harga produk</label>
-            <div class="input-group"> <!-- Tambahkan div untuk menggunakan Bootstrap input group -->
-                <span class="input-group-text" id="rupiah-addon">Rp. </span> <!-- Tambahkan span dengan Rp. -->
+            <div class="input-group">
+                <span class="input-group-text" id="rupiah-addon">Rp. </span> 
                 <input type="text" class="form-control" id="harga" name="harga" value="{{ $produk->harga }}">
             </div>
         </div>
-
         <script>
             const inputHarga = document.getElementById('harga');
-
             inputHarga.addEventListener('input', function (e) {
-                // Hilangkan karakter selain angka
                 let nominal = this.value.replace(/\D/g, '');
-
-                // Format ke dalam rupiah
                 nominal = new Intl.NumberFormat('id-ID').format(nominal);
-
-                // Tambahkan "Rp." secara manual sebelum nominal
                 nominal = 'Rp. ' + nominal;
-
-                // Tampilkan kembali ke dalam input
                 this.value = nominal;
             });
         </script>
-
          <div class="mb-3">
             <label for="stok" class="form-label">Stok produk</label>
             <input type="text" class="form-control" id="stok" name="stok" value="{{ $produk->stok }}">
@@ -73,15 +63,12 @@
                 }
             }
         </script>
-
-
         <div class="mb-3">
             <label for="description" class="form-label">Deskripsi</label>
             <textarea class="form-control" id="description" name="description" style="height: 300px" onkeyup="checkDescriptionLength()">{{ $produk->description }}</textarea>
 
             <p id="charCountMessage"></p>
         </div>
-
         <script>
             function checkDescriptionLength() {
                 var description = document.getElementById("description").value;
@@ -94,7 +81,6 @@
                 }
             }
         </script>
-
         <button type="submit" class="btn btn-info">Update</button>
     </form>
 @endsection

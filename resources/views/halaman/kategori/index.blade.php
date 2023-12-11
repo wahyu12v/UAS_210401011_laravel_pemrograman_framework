@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('body')
-
-
-<div class=" ">
     <div class="d-flex align-items-center justify-content-between mb-2">
         <h3 class="mb-0">List Kategori</h3>
         <a class="btn btn-info btn-hover-info" href="{{ route('kategori.create') }}" role="button">Tambah Kategori</a>
@@ -47,6 +44,4 @@
             </tbody>
         </table>
     </div>
-</div>
-
 @endsection

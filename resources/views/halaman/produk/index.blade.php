@@ -52,15 +52,12 @@
                             display: flex;
                             gap: 2px;
                         }
-
                         .button-group button,
                         .button-group a {
                             flex: 1;
-                            padding: 5px 5px; /* Sesuaikan dengan padding yang diinginkan */
+                            padding: 5px 5px;
                         }
                     </style>
-
-
                     <td class="align-middle">
                         <div class="button-group">
                             <a href="{{ route('produk.show', $produk->id) }}" type="button" class="btn btn-success ">Detail</a>
@@ -72,8 +69,6 @@
                             </form>
                         </div>
                     </td>
-
-
                 </tr>
                 @endforeach
                 @else
@@ -85,5 +80,4 @@
         </table>
     </div>
 </div>
-
 @endsection

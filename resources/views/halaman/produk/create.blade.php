@@ -39,23 +39,13 @@
 
         <script>
             const inputHarga = document.getElementById('harga');
-
             inputHarga.addEventListener('input', function (e) {
-                // Hilangkan karakter selain angka
                 let nominal = this.value.replace(/\D/g, '');
-
-                // Format ke dalam rupiah
                 nominal = new Intl.NumberFormat('id-ID').format(nominal);
-
-                // Tambahkan "Rp." secara manual sebelum nominal
                 nominal = 'Rp. ' + nominal;
-
-                // Tampilkan kembali ke dalam input
                 this.value = nominal;
             });
         </script>
-
-
         <div class="mb-3">
                 <label for="stok" class="form-label">Stok produk</label>
                 <input type="text" class="form-control" id="stok" name="stok">
@@ -77,7 +67,6 @@
             function checkDescriptionLength() {
                 var description = document.getElementById("description").value;
                 var charCountMessage = document.getElementById("charCountMessage");
-
                 if (description.length < 200) {
                     charCountMessage.textContent = "Minimal 200 karakter diperlukan.";
                 } else {
@@ -85,10 +74,8 @@
                 }
             }
         </script>
-
         <button type="submit" class="btn btn-info btn-hover-info">Submit</button>
     </form>
-
     <script>
         function previewImage(event) {
             const input = event.target;
