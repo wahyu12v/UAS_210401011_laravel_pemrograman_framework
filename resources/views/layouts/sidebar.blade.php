@@ -107,9 +107,22 @@
     .navbar-toggler-white .navbar-toggler-icon {
         background-color: white; /* Ubah warna ikon agar terlihat */
     }
+
+    /* Tambahkan gaya untuk navbar yang tetap di bagian atas */
+    .navbar.fixed-top {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    /* Atur gaya untuk konten yang berada di bawah navbar */
+    body {
+        padding-top: 70px; /* Sesuaikan dengan tinggi navbar Anda */
+    }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#164863;">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#164863;">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('logo.png') }}" alt="Nama Logo" width="50" height="50">
@@ -135,4 +148,7 @@
         </div>
     </div>
 </nav>
+
+<!-- Isi halaman web Anda di bawah navbar -->
+
 
