@@ -15,14 +15,14 @@
         <table class="table table-striped">
             <thead class="table-info">
                 <tr class="text-center">
-                    <th style="width: 5%">Nomor</th>
-                    <th>Judul produk</th>
+                    <th style="width: 5%">No</th>
+                    <th>Nama</th>
                     <th>Merek</th>
                     <th>Kategori</th>
                     <th>Harga</th>
-                    <th>Stok Produk</th>
+                    <th>Stok</th>
                     <th>Gambar</th>
-                    <th>Waktu Posting</th>
+                    <th>Waktu</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -41,7 +41,7 @@
                     <td class="align-middle">{{ $produk->stok }}</td>
                     <td class="align-middle">
                         @if($produk->img)
-                        <img src="{{ asset('images/' . $produk->img) }}" alt="Preview"  style="max-width: 80px;">
+                        <img src="{{ asset('images/' . $produk->img) }}" alt="Preview" style="max-width: 80px; filter: grayscale(50%);">
                         @else
                         Tidak Ada Gambar
                         @endif

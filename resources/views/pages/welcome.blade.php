@@ -30,8 +30,8 @@
 
                 @foreach ($reversedProduks as $produk)
                     <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card">
-                            <img src="{{ asset('images/' . $produk->img) }}" class="card-img-top" alt="{{ $produk->judul }}" style="width: 100%; height: 200px;">
+                        <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+                            <img src="{{ asset('images/' . $produk->img) }}" class="card-img-top" alt="{{ $produk->judul }}" style="margin-top:10px; display: block; margin-left: auto; margin-right: auto; width: 90%; height: 200px; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $produk->judul }}</h5>
                                 <p class="card-text">{{ Str::limit($produk->description, 150) }}</p>
@@ -40,6 +40,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 @endforeach
             </div>
